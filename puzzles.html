@@ -9,12 +9,36 @@
     </style> 
   </head>
   <body>
-    <div>
+    <div id="test">
 
     </div>
 
     <script text="text/javascript">
-      
+
+    let testdiv = document.getElementById('test');
+    let teststring = '';
+    let letter_row = 10;
+    let letter_column = 10;
+
+    function fillin()
+    {
+      let fillLetters = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
+                         'n','o','p','q','r','s','t','u','v','x','y','z'];
+
+      return fillLetters[Math.floor((Math.random() * (fillLetters.length - 1)) + 1)];
+    }
+
+    for(i = 0; i < letter_row; i++)
+    {
+      for(j = 0; j < letter_column; j++)
+      {
+        teststring += fillin() + " ";
+      }
+      teststring += "<br/>";
+    }
+
+    testdiv.innerHTML = teststring;
+
     </script>
   </body>
 
