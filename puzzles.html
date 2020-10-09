@@ -19,6 +19,14 @@
     let teststring = '';
     let letter_row = 10;
     let letter_column = 10;
+    let matrixgrid = new Array();
+    let lettergrid = function(){
+      this.letter = '';
+      this.row = 0;
+      this.column = 0;
+      this.isword = false;
+    };
+    let words = ['test','bob','none'];
 
     function fillin()
     {
@@ -28,11 +36,45 @@
       return fillLetters[Math.floor((Math.random() * (fillLetters.length - 1)) + 1)];
     }
 
+    function addword()
+    {
+      /*
+      word position: horizatal, vertical, horizatal diagnal, vertical diagnal
+      word letter order: fordward, backwards
+      start_row: the row to start in
+      start_column: the column to start in
+      */
+
+       let word_postions = get_postions();
+       let letter_order = get_letter_order();
+       let start_posting = get_start_postion();//this will be an object
+
+       
+
+
+    }
+
+    //bulid grid
     for(i = 0; i < letter_row; i++)
     {
+      matrixgrid[i] = new Array();
       for(j = 0; j < letter_column; j++)
       {
-        teststring += fillin() + " ";
+        test = new lettergrid();
+        test.letter = fillin();
+        test.row = i;
+        test.column = j;        
+        matrixgrid[i][j] = test;
+      }
+    }
+
+    //print
+    for(l = 0; l < letter_row; l++)
+    {
+      for(k = 0; k < letter_column; k++)
+      {
+        //teststring += fillin() + "    ";
+        teststring += matrixgrid[l][k].letter + "              ";
       }
       teststring += "<br/>";
     }
