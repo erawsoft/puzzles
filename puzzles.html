@@ -36,7 +36,36 @@
       return fillLetters[Math.floor((Math.random() * (fillLetters.length - 1)) + 1)];
     }
 
-    function addword()
+    function get_postions()
+    {
+      let postitions = ['horizontal','vertical','horizontal diagonal','vertical diagnal'];
+      return postitions[Math.floor((Math.random() * (postitions.length - 1)) + 1)];
+    }
+
+    function get_letter_order()
+    {
+      let letterorder = ['forward','backward'];
+      return letterorder[Math.floor((Math.random() * (letterorder.length - 1)) + 1)];
+    }
+
+    function get_start_postion(wlenght,order,position)
+    {
+      let column;
+      let row;
+
+       if(wlenght <= letter_column )
+       {
+
+       }
+       else
+       {
+         return false;
+       }
+
+       return {column:column,row:row};
+    }
+
+    function addword(word)
     {
       /*
       word position: horizatal, vertical, horizatal diagnal, vertical diagnal
@@ -47,7 +76,7 @@
 
        let word_postions = get_postions();
        let letter_order = get_letter_order();
-       let start_posting = get_start_postion();//this will be an object
+       let start_posting = get_start_postion(word.length,letter_order,word_postions);//this will be an object
 
        
 
