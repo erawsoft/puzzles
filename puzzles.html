@@ -38,7 +38,8 @@
 
     function get_postions()
     {
-      let postitions = ['horizontal','vertical','horizontal diagonal','vertical diagnal'];
+      let postitions = ['horizontal','horizontalBack','vertical','verticalUp',
+                        'diagonal','diagonalUp','diagonalBack','diagonalUpBack'];
       return postitions[Math.floor((Math.random() * (postitions.length - 1)) + 1)];
     }
 
@@ -75,8 +76,9 @@
       */
 
        let word_postions = get_postions();
-       let letter_order = get_letter_order();
-       let start_posting = get_start_postion(word.length,letter_order,word_postions);//this will be an object
+       //let letter_order = get_letter_order();
+       //this will be an object
+       let start_posting = get_start_postion(word.length,word_postions);
 
        
 
